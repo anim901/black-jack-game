@@ -54,8 +54,8 @@ def blackjack_helper(user_cards_list, com_cards_list):
         elif indicator == 0:
             print_score(user_cards_list, com_cards_list)
             print("Computer wins!!! because you went over ")
-            play()
-            return
+            play()  # learning: since without this instance of blackjack_helper ending, the call for play is made and when the play function ends it's execution due to entering n it again comes here and continues with the iteration of while with card_next is stil being 'y' and when card is selected and it enters the else block
+            return  # above error occured due to the absence of this return statement.(similarly it was not included after any call for play function)
         else:
             print("enters into the else block ")
             print_current_score(user_cards_list, com_cards_list)
